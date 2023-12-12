@@ -1,24 +1,24 @@
-/******************************************************************************
-
-Welcome to GDB Online.
-GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
-C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
-Code, Compile, Run and Debug online from anywhere in world.
-
-*******************************************************************************/
 class Solution {
-    public int[] getConcatenation(int[] nums) {
-        
-           int n =nums.length;
-           int[] ans=new  int[n*2];
-           for(int i=0; i < n ;i++){
-               ans[i]=nums[i];
-               ans[i+n]=nums[i];
+    int binarysearch(int arr[], int n, int k) {
+        int left=0;
+        int right = n - 1;
 
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
 
-           }
-           return ans;
             
+            if (arr[mid] == k)
+                return mid;
+
+            
+            if (arr[mid] < k)
+                left = mid + 1;
+            
+            else
+                right = mid - 1;
+        }
+
         
+        return -1;
     }
 }
